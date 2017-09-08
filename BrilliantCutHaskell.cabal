@@ -42,9 +42,11 @@ build-type:          Simple
 -- README.
 extra-source-files:  ChangeLog.md
 
+
 -- Constraint on the version of Cabal needed to build this package.
 cabal-version:       >=1.10
 
+data-files:          diamond.json
 
 executable BrilliantCutHaskell
   -- .hs or .lhs file containing the Main module.
@@ -64,4 +66,3 @@ executable BrilliantCutHaskell
   
   -- Base language which the package is written in.
   default-language:    Haskell2010
-  
