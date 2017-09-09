@@ -13,7 +13,6 @@ data Cut = Cut {
     value :: Int
 } deriving (Generic, Show)
 
-
 data Gem = Gem {
     cuts :: [Cut],
     rawChunks :: [Int]
@@ -38,13 +37,7 @@ instance FromJSON Input where
 
 main :: IO ()
 main = do
-
-    let diamondJson = "/Users/jontaylor/HomeProjects/BrilliantCutHaskell/src/diamond.json"
-    bs1 <- BS.readFile diamondJson
-    let maybeDiamond = decode bs1 :: Maybe Gem
-    putStrLn $ show maybeDiamond
-
     let inputJson = "/Users/jontaylor/HomeProjects/BrilliantCutHaskell/src/input.json"
-    bs2 <- BS.readFile inputJson
-    let maybeInput = decode bs2 :: Maybe Input
+    bs <- BS.readFile inputJson
+    let maybeInput = decode bs :: Maybe Input
     putStrLn $ show maybeInput
