@@ -1,3 +1,7 @@
+## TODO
+
+* Add unit tests ([HUnit](https://hackage.haskell.org/package/HUnit))
+
 ## Links
 
 * [Brilliant cut — Wunderdog](http://wunder.dog/brilliant-cut)
