@@ -59,11 +59,8 @@ calculateProfitForCombinationOfCuts rawChunk cuts =
         
 calculateMaxProfitForRawChunk :: [Cut] -> Int -> Int
 calculateMaxProfitForRawChunk availableCuts rawChunk =
-    v3
-    where
-        v1 = generateCombinationsOfCuts rawChunk availableCuts []
-        v2 = map (calculateProfitForCombinationOfCuts rawChunk) v1
-        v3 = maximum v2
+    maximum . map (calculateProfitForCombinationOfCuts rawChunk)
+        $ generateCombinationsOfCuts rawChunk availableCuts []
 
 calculateMaxProfitsForRawChunks :: Gem -> [Int]
 calculateMaxProfitsForRawChunks gem =
