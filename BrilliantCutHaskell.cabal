@@ -59,7 +59,7 @@ executable BrilliantCutHaskell
   -- other-extensions:    
   
   -- Other library packages from which modules are imported.
-  build-depends:       base >=4.9 && <4.10, bytestring, aeson >= 1.2
+  build-depends:       base >=4.9 && <4.10, bytestring, unordered-containers, aeson >= 1.2
   
   -- Directories containing source files.
   hs-source-dirs:      src
