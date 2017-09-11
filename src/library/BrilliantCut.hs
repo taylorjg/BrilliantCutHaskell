@@ -1,6 +1,9 @@
 {-# LANGUAGE DeriveGeneric, OverloadedStrings #-}
 
-module Main where
+module BrilliantCut (
+    largestProfitByteString,
+    largestProfitGems
+    ) where
 
 import Data.Aeson
 import Data.Aeson.Types
@@ -66,16 +69,10 @@ calculateMaxProfitsForRawChunks :: Gem -> [Int]
 calculateMaxProfitsForRawChunks gem =
     map (calculateMaxProfitForRawChunk (cuts gem)) (rawChunks gem)
 
-largestProfit :: Input -> Int
-largestProfit = sum . map sum . map calculateMaxProfitsForRawChunks . gems
+largestProfitGems :: [Gem] -> Int
+largestProfitGems = sum . map sum . map calculateMaxProfitsForRawChunks
 
-main :: IO ()
-main = do
-    let inputJson = "/Users/jontaylor/HomeProjects/BrilliantCutHaskell/src/input.json"
-    bs <- BS.readFile inputJson
-    let maybeInput = decode bs :: Maybe Input
-    case maybeInput of
-        Just input ->
-            let answer = largestProfit input
-            in putStrLn $ "Largest profit: " ++ show answer
-        _ -> putStrLn "Error reading input.json"
+largestProfitByteString :: BS.ByteString -> Maybe Int
+largestProfitByteString bs =
+    (largestProfitGems . gems) `fmap` maybeInput
+    where maybeInput = decode bs :: Maybe Input
