@@ -3,10 +3,10 @@ import qualified Data.ByteString.Lazy.Char8 as BS
 import Test.HUnit
 import System.Exit (exitFailure)
 
-input1 = "/Users/jontaylor/HomeProjects/BrilliantCutHaskell/test/input1.json"
-input2 = "/Users/jontaylor/HomeProjects/BrilliantCutHaskell/test/input2.json"
-input3 = "/Users/jontaylor/HomeProjects/BrilliantCutHaskell/test/input3.json"
-input4 = "/Users/jontaylor/HomeProjects/BrilliantCutHaskell/test/input4.json"
+input1 = "test/input1.json"
+input2 = "test/input2.json"
+input3 = "test/input3.json"
+input4 = "test/input4.json"
 
 testCommon :: String -> Int -> IO ()
 testCommon fn expected = do

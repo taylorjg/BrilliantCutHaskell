@@ -1,7 +1,8 @@
 ## TODO
 
-* Don't hardcode path to input.json
-* Add unit tests ([HUnit](https://hackage.haskell.org/package/HUnit))
+* ~~Use relative paths for JSON files~~
+* ~~Add unit tests ([HUnit](https://hackage.haskell.org/package/HUnit))~~
+* Convert unit tests to [Hspec](https://hspec.github.io/)
 * Add benchmarking
 * Add memoization (of `calculateMaxProfitForRawChunk`)
 * Add parallelisation ? Using the [`Par` monad](https://hackage.haskell.org/package/monad-par) ?
