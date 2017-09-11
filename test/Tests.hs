@@ -8,7 +8,7 @@ input2 = "test/input2.json"
 input3 = "test/input3.json"
 input4 = "test/input4.json"
 
-testCommon :: String -> Int -> IO ()
+testCommon :: FilePath -> Int -> IO ()
 testCommon fn expected = do
     bs <- BS.readFile fn
     let maybeAnswer = largestProfitByteString bs

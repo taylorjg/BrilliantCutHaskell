@@ -8,7 +8,7 @@ module BrilliantCut (
 import Data.Aeson
 import Data.Aeson.Types
 import GHC.Generics
-import qualified Data.ByteString.Lazy.Char8 as BS
+import qualified Data.ByteString.Lazy.Char8 as C8
 import qualified Data.HashMap.Strict as HM
     
 data Cut = Cut {
@@ -72,7 +72,7 @@ calculateMaxProfitsForRawChunks gem =
 largestProfitGems :: [Gem] -> Int
 largestProfitGems = sum . map sum . map calculateMaxProfitsForRawChunks
 
-largestProfitByteString :: BS.ByteString -> Maybe Int
+largestProfitByteString :: C8.ByteString -> Maybe Int
 largestProfitByteString bs =
     (largestProfitGems . gems) `fmap` maybeInput
     where maybeInput = decode bs :: Maybe Input
