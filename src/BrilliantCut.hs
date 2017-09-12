@@ -44,7 +44,7 @@ generateCombinationsOfCuts chunkSize availableCuts actualCuts =
         cut <- availableCuts
         let chunkSize' = chunkSize - size cut
         case chunkSize' of
-            _ | chunkSize' > 0 ->
+            _ | chunkSize' >= 0 ->
                 let
                     actualCuts' = cut:actualCuts
                     rest = generateCombinationsOfCuts chunkSize' availableCuts actualCuts'
